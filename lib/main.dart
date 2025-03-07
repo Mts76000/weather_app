@@ -12,10 +12,6 @@ class MyApp extends StatelessWidget {
   @override
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      home: WeatherView(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: WeatherView());
   }
 }

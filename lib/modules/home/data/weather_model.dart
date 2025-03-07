@@ -1,15 +1,19 @@
-class WeatherItem {
-  final String city;
-  final String temperature;
-  final int code;
+class WeatherModel {
+  final String cityName;
+  final double temperature;
+  final int weatherCode;
 
-  WeatherItem({
-    required this.city,
+  WeatherModel({
+    required this.cityName,
     required this.temperature,
-    required this.code,
+    required this.weatherCode,
   });
-}
 
-// final List<WeatherItem> WeatherItemList = [
-//   WeatherItem(city: 'San Francisco', temperature: '9°C', code: 1),
-// ];
+  factory WeatherModel.fromjson(Map<String, dynamic> json, String cityName) {
+    return WeatherModel(
+      cityName: cityName,
+      temperature: json['temperature'],
+      weatherCode: json['weather_code'],
+    );
+  }
+}
